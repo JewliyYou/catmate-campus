@@ -1,0 +1,29 @@
+services:
+  - type: web
+    name: catmate-campus
+    runtime: docker
+    plan: free
+    region: singapore
+    dockerfilePath: ./Dockerfile
+    healthCheckPath: /
+    envVars:
+      - key: SEED_DEMO_USERS
+        value: "false"
+      - key: INITIAL_ADMIN_DISPLAY_NAME
+        value: 平台管理员
+      - key: INITIAL_ADMIN_USERNAME
+        sync: false
+      - key: INITIAL_ADMIN_PASSWORD
+        sync: false
+      - key: DB_URL
+        sync: false
+      - key: DB_USERNAME
+        sync: false
+      - key: DB_PASSWORD
+        sync: false
+      - key: JAVA_TOOL_OPTIONS
+        value: -Xms64m -Xmx256m -XX:+UseSerialGC
+      - key: SPRING_DATASOURCE_HIKARI_MAXIMUM_POOL_SIZE
+        value: "3"
+      - key: SPRING_DATASOURCE_HIKARI_MINIMUM_IDLE
+        value: "0"

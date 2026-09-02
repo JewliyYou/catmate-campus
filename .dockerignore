@@ -1,0 +1,14 @@
+.git
+.github
+.idea
+.vscode
+.env
+.env.*
+frontend/node_modules
+frontend/dist
+backend/target
+data
+assets
+docs
+scripts
+*.log

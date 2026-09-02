@@ -1,0 +1,13 @@
+root = true
+
+[*]
+charset = utf-8
+end_of_line = lf
+insert_final_newline = true
+
+# Windows PowerShell 5.1 treats UTF-8 without BOM as the legacy system code page.
+# Keep executable PowerShell scripts as UTF-8 with BOM so Chinese text is parsed correctly.
+[*.ps1]
+charset = utf-8-bom
+end_of_line = crlf
+
